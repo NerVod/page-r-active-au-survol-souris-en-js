@@ -2,11 +2,11 @@
 
 function  maFonction(e)
 {
-    console.log('click')
+    alert('Roquet to Mars...')
 }
 
 document.querySelector('article[data-order="3"] > label').addEventListener('click', maFonction);
-document.querySelector('article[data-order="3"] > label').addEventListener('click', e =>{console.log('clac');});
+document.querySelector('article[data-order="3"] > label').addEventListener('click', e =>{alert('BooM !');});
 
 
 
