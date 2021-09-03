@@ -37,6 +37,7 @@ nav label {
   position: relative;
   box-shadow: 1px 1px 2px;
   font-size: 90%;
+  text-align: center;
 }
 
 nav label:hover {

@@ -31,3 +31,44 @@ for (let articleEnCours of lesArticles)
         }
     );
 }
+
+// fonction pour modifier la taille du texte selon click bouton un ou bouton deux
+
+function changeTaille(mode)
+{
+    let lesArticles = document.querySelectorAll('article > p');
+    for(let articleEnCours of lesArticles)
+    {
+        articleEnCours.style.fontSize = mode =='gros' ? '130%' : '100%';
+    }
+}
+
+// pose des écouteurs pour les boutons concernés
+document
+.querySelectorAll('nav > label')[1]
+.addEventListener('click', e =>{changeTaille('gros');});
+document
+.querySelectorAll('nav > label') [2]
+.addEventListener('click', e => {changeTaille('normal');});
+
+
+
+/* fonction pour changer apparence du texte après un clic pour signaler déjà lu
+
+fonction à vérifier, erreur exécution
+
+
+
+let lesArticles = document.querySelectorAll('article');
+
+for (let articleEnCours of lesArticles)
+{
+    articleEnCours
+    .addEventListener ('click',
+    e => {
+        e.target.style.fontStyle= "italic";
+        e.target.style.color = 'gainsboro';
+    }
+    );
+}
+*/
