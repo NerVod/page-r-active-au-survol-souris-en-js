@@ -119,8 +119,24 @@ document
 
 
 
+// fonction pour passer les paragraphes en gris les uns parès les autres ( avec sortie console de la longueur de chaque fonction)
 
+function passeElementEnGris(e)
+{
+    e.style.color = 'gainsboro';
+}
 
+function passeEnGris ()
+{
+    let lesArticles = document.querySelectorAll('article > p');
+    let cpt = 0;
+    for (let article of lesArticles)
+    {
+        
+        setTimeout(function(){passeElementEnGris(article);}, ++cpt * 1000);
+    }
+}
+document.querySelector('nav #pageUne').addEventListener('click', passeEnGris);
 
 
 
