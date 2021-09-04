@@ -121,6 +121,11 @@ document
 
 // fonction pour passer les paragraphes en gris les uns parès les autres ( avec sortie console de la longueur de chaque fonction)
 
+
+
+
+
+
 function passeElementEnGris(e)
 {
     e.style.color = 'gainsboro';
@@ -132,15 +137,15 @@ function passeEnGris ()
     let cpt = 0;
     for (let article of lesArticles)
     {
-        
-        setTimeout(function(){passeElementEnGris(article);}, ++cpt * 1000);
+        console.log('passeEnGris', article.innerHTML.length);
+        (function (art)
+        {
+            setTimeout(function(){passeElementEnGris(art);}, ++cpt * 1000);
+        }
+       ) (article);
     }
 }
 document.querySelector('nav #pageUne').addEventListener('click', passeEnGris);
-
-
-
-
 
 
 
