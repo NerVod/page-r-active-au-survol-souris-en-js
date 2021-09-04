@@ -10,6 +10,10 @@ document.querySelector('article[data-order="3"] > label').addEventListener('clic
 
 
 
+
+
+
+
 // modifier en javascript l'apparence du texte selon événement de souris
 
 let lesArticles = document.querySelectorAll ("article") ;
@@ -32,6 +36,18 @@ for (let articleEnCours of lesArticles)
     );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 // fonction pour modifier la taille du texte selon click bouton un ou bouton deux
 
 function changeTaille(mode)
@@ -53,10 +69,19 @@ document
 
 
 
-/* fonction pour changer apparence du texte après un clic pour signaler déjà lu
 
-fonction à vérifier, erreur exécution
 
+
+
+
+
+
+
+
+/*
+ //fonction pour changer apparence du texte après un clic pour signaler déjà lu
+
+// cette fonction créé conflit avec fonctions précédentes
 
 
 let lesArticles = document.querySelectorAll('article');
@@ -72,3 +97,34 @@ for (let articleEnCours of lesArticles)
     );
 }
 */
+
+
+
+
+
+
+
+
+
+
+// autrem manière de modifier le texte au clic en passant par l'élément parent
+document
+.querySelector('.articleContainer')
+.addEventListener ('click' , e => {
+    e.target.style.fontStyle = "italic";
+    e.target.style.color = 'gainsboro';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
