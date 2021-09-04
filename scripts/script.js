@@ -128,6 +128,7 @@ document
 
 function passeElementEnGris(e)
 {
+    console.log('passeElementEnGris', e.innerHTML.length);
     e.style.color = 'gainsboro';
 }
 
