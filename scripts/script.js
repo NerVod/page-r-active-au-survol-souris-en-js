@@ -148,5 +148,90 @@ function passeEnGris ()
 }
 document.querySelector('nav #pageUne').addEventListener('click', passeEnGris);
 
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+// fonction pour remplacer un élément par un autre en conservant la numérotation
+$('article > label').replaceWith(function (i, e) { return '<button class="realButton">' + e + '</button>';});
+*/
+
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+// remplacer un élément par le clone d'un autre (ex dupliquer un paragraphe à la place d'un autre)
+$('article:eq(3)').replaceWith($('article:eq(0)').clone());
+//article en position 3 (donc le 4°) sera remplacé par copie de l'article en position 0 (donc du premier)
+/*
+
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+// insertion d'un élément placé devant un autre ( ex insérer un praragraphe avec ".before") ( peut se faire après avec ".after")
+$('article:eq(2)').before('<article><label>Nouvel Article</label><p>Ceci est un exemple d\'article 2bis.</p></article>');
+//Article en position 2 pour référence        puis ajout d'un nouvel article qui prend place devant lui.
+*/
+
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+// autre méthode d'insertion de paragraphe / élément, avec '.insertAfter', 
+$("<article><label>Article 3.5</label><p>Voici un nouvel article 3 bis.</p></article>").insertAfter("article:eq(2)");
+//               prend en référence l'élément à ajouter                   puis la zone d'insertion
+*/
+
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+// fonction  pour supprimer conflit avec utilisation $ si plusieurs bibliothèques avec Jquery
+jQuery.noConflict()
+// l'alias $ est disponible et ne référence plus la fonction jQuery
+let jQ = jQuery.noConflict()
+//jQ() devient l'alias remplaçant $() et équivalent à la fonction jQuery()
+*/
 
 
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+//  fonction callback mouseenter puis mouseleave 
+function callbackMe()
+{
+    console.log("Réaction à un événement Mouse enter !");
+}
+
+function callbackML()
+{
+    console.log("Réaction à un événement Mouse Leave !");
+}
+
+// pose d'écouteurs popur appel aux fonctions séparément
+$('article > label')
+.on("mouseenter", callbackMe);
+$('article > label')
+.on("mouseleave", callbackML);
+*/
+
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+// fonction callback avec retour différent selon l'événement écouté ( mouseenter ou mouseleave)
+function callbackMEML(e)
+{
+    console.log("Réaction à un événement " + e.type);
+}
+
+$('article > label')
+.on ("mouseenter mouseleave", callbackMEML) ;
+*/
+
+///////////////////////////////////////////////////////////////////////////////
+
+/*
+// fonction avec retour console du texte de l'action réalisée ( clic sur tel ou tel bouton)
+function callback(e)
+{
+    console.log('Le bouton ' + $(e.currentTarget).text() + ' a été cliqué !');
+}
+
+$('nav').on('click', 'label', callback);
+*/
