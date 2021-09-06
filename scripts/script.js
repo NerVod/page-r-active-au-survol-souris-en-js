@@ -227,11 +227,43 @@ $('article > label')
 ///////////////////////////////////////////////////////////////////////////////
 
 /*
-// fonction avec retour console du texte de l'action réalisée ( clic sur tel ou tel bouton)
+// fonction avec retour text de l'action réalisée ( clic sur tel ou tel bouton)
 function callback(e)
 {
     console.log('Le bouton ' + $(e.currentTarget).text() + ' a été cliqué !');
 }
 
 $('nav').on('click', 'label', callback);
+
+//    si ajout d'un nouveau bouton, par délégation d'vénement, la fonction call backréagit toujours via le même écouteur posé
+$('nav').append('<label>Bouton trois</label>');
+*/
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+/*
+//fonction pour modifier l'apparence d'un élément par "trigger" quand une condition est remplie
+
+function verifierSiArticleNonLu()
+{
+    return $('article:not(.articleLu)').length > 0;
+}
+
+function marquerArticle(e)
+{
+    $(e.currentTarget).addClass('articleLu');
+    if(!verifierSiArticleNonLu()) // S'il n'y a rien a lire on déclenche
+    {
+        $('.articleContainer').trigger('ToutEstLu');
+    }
+}
+
+//pose d'un écouteur en délégation  pour marquer les articles
+$('.articleContainer').on('click', 'article', marquerArticle);
+
+//puis pose d'un écouteur  sur l'événement personalisé
+$('.articleContainer').on('ToutEstLu', e => {$('article').css('color', 'tomato'); console.log('Vous avez lu tous les articles de la page !');})
 */
