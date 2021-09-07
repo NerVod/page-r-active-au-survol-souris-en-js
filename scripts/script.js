@@ -267,3 +267,15 @@ $('.articleContainer').on('click', 'article', marquerArticle);
 //puis pose d'un écouteur  sur l'événement personalisé
 $('.articleContainer').on('ToutEstLu', e => {$('article').css('color', 'tomato'); console.log('Vous avez lu tous les articles de la page !');})
 */
+
+////////////////////////////////////////////////////////////////////////////////
+
+/*
+// fonction .hide() pour masquer un élément HTML avec durée d'animation
+//     $('article:eq(2)').hide(2000);
+
+// autre méthode avec fonction callback a exécuter à la fin de l'animation ( ici cacher chap 1 une fois que  chap3 est chaché )
+$('article:eq(2)').hide(3000, 'linear', e => {$('article:eq(0)').hide(2000);});
+*/
+
+////////////////////////////////////////////////////////////////////////////////
