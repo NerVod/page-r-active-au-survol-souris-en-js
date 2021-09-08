@@ -276,6 +276,60 @@ $('.articleContainer').on('ToutEstLu', e => {$('article').css('color', 'tomato')
 
 // autre méthode avec fonction callback a exécuter à la fin de l'animation ( ici cacher chap 1 une fois que  chap3 est chaché )
 $('article:eq(2)').hide(3000, 'linear', e => {$('article:eq(0)').hide(2000);});
+
+*/
+////////////////////////////////////////////////////////////////////////////////
+
+/*
+// fonction fadeTo pour modifier l'opacité des éléments
+$('article:lt(2)').fadeTo(2000, .6);
+$('article:gt(2)').fadeTo(2000, .2);
 */
 
 ////////////////////////////////////////////////////////////////////////////////
+
+/*
+// fonction .animate() pour modifier un élément selon timing souhaité
+$('article>p:eq(3)').animate({width: 660, fontSize: 24}, 2000);
+*/
+
+////////////////////////////////////////////////////////////////////////////////
+
+/*
+// autre exemple fonction animate: grossissement bordure top
+
+$('.articleContainer').css('borderTop', 'solid 1px dodgerblue');// initialisation de la bordure si pas présente en CSS
+$('.articleContainer').animate({borderTopWidth: 12}, 2000);
+// ensuite animation sur la bordure qui s'épaissit pendant 2 secondes
+*/
+
+
+////////////////////////////////////////////////////////////////////////////////
+                // CHAINAGE DE FONCTIONS .queue() et .dequeue()
+/*
+// chainage de fonctions sur une seule ligne de code qui revient à la méthode .queue()
+$('article:eq(2)').slideUp(6000).fadeIn(15000);
+*/
+/*
+// chainage de fonctions via fonction .queue()
+$('article:eq(2)').queue(function() {console.log('Animation terminée !');$(this).css('backgroundColor', 'red');});
+*/
+
+
+/*
+// chainage de fonctions en queue puis forçage du passage après l'éxécution de la fonction callback
+// pour la dernière fonction avec .dequeue()
+$("article:eq(3)")
+.animate({height: "+=200px"}, 2500)
+.queue(function() {
+    $(this).css("background", "red");
+                    }
+        )
+        .dequeue()      // fonction suivante non gérée si pas acticée par .dequeue()
+        .animate({height: "-=200px"}, 1000);
+
+*/
+
+////////////////////////////////////////////////////////////////////////////////
+
+
